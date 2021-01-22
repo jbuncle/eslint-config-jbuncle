@@ -1,7 +1,7 @@
 {
-    "name": "@jbuncle/lint-ts",
+    "name": "@jbuncle/eslint-config-jbuncle",
     "version": "1.0.0",
-    "description": "Shared TypeScript lint rules",
+    "description": "Shared Eslint/TypeScript lint rules",
     "main": "index.js",
     "dependencies": {
         "@types/node": "^14.14.20",
