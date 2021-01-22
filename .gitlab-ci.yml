@@ -9,11 +9,9 @@ cache:
 
 image: cyberpearuk/node-build-docker
 
-build-and-tag:
+tag:
     stage: build
     script:
-        - npm install
-        - npm run build
         - git-tag
     only:
         - master
@@ -21,8 +19,6 @@ build-and-tag:
 pack:
     stage: build
     script:
-        - npm install
-        - npm run build
         - npm pack
     artifacts:
         paths:
