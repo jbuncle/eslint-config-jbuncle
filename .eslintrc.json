@@ -5,7 +5,7 @@
         "node": true
     },
     "extends": [
-        "eslint:recommended",
+        "eslint:recommended", 
         "plugin:@typescript-eslint/all",
         "prettier",
         "prettier/@typescript-eslint",
@@ -17,41 +17,27 @@
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint/eslint-plugin",
-        "eslint-plugin-tsdoc",
         "eslint-plugin-unicorn",
         "eslint-plugin-prefer-arrow",
         "eslint-plugin-import",
         "eslint-plugin-no-null",
+        "eslint-plugin-jsdoc",
         "@typescript-eslint/eslint-plugin"
     ],
     "rules": {
         "@typescript-eslint/require-await": "off",
-        "tsdoc/syntax": [
-            "error",
-            {}
-        ],
         "no-console": 1,
-        "require-jsdoc": [
-            "error",
-            {
-                "require": {
-                    "FunctionDeclaration": true,
-                    "MethodDefinition": false,
-                    "ClassDeclaration": true,
-                    "ArrowFunctionExpression": false,
-                    "FunctionExpression": false
-                }
+        "require-jsdoc": ["error", {
+            "require": {
+                "FunctionDeclaration": true,
+                "MethodDefinition": false,
+                "ClassDeclaration": true,
+                "ArrowFunctionExpression": false,
+                "FunctionExpression": false
             }
-        ],
-        "@typescript-eslint/quotes": [
-            "error",
-            "backtick"
-        ],
-        "@typescript-eslint/space-before-function-paren": [
-            "error",
-            "never"
-        ],
+        }],
+        "@typescript-eslint/quotes": ["error", "backtick"],
+        "@typescript-eslint/space-before-function-paren": ["error", "never"],
         "@typescript-eslint/indent": 1,
         "@typescript-eslint/prefer-readonly": 1,
         "@typescript-eslint/promise-function-async": 1,
