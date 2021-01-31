@@ -14,7 +14,7 @@
         "eslint-plugin-import": "^2.22.1",
         "eslint-plugin-no-null": "^1.0.2",
         "eslint-plugin-prefer-arrow": "^1.2.2",
-        "eslint-plugin-tsdoc": "^0.2.11",
+        "eslint-plugin-jsdoc": "^31.3.2",
         "eslint-plugin-unicorn": "^27.0.0",
         "ts-node": "^9.1.1",
         "tslint": "^5.20.1",
