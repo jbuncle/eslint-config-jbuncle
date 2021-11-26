@@ -19,6 +19,6 @@ jobs:
         with:
           registry-url: 'https://npm.pkg.github.com'
       - run: npm install
-      - run: npm publish ${{ env.RELEASE_VERSION }}
+      - run: npm publish ${{ env.RELEASE_VERSION }} --registry 'https://npm.pkg.github.com'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
