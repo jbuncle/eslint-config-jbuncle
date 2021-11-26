@@ -26,6 +26,7 @@ jobs:
       - run: npm version ${{ env.RELEASE_VERSION }}
       - run: npm pack
       - run: echo "RELEASE=$(ls *.tgz | tail -n 1)" >> $GITHUB_ENV
-      - run: npm publish ${{ env.RELEASE }} --registry 'https://npm.pkg.github.com'
+      - run: npm login --registry=https://npm.pkg.github.com --scope=@jbuncle
+      - run: npm publish ${{ env.RELEASE }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
