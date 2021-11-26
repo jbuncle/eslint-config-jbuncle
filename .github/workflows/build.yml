@@ -12,13 +12,19 @@ jobs:
       packages: write 
     steps:
       - uses: actions/checkout@v2
-      - name: Set env
+
+      - name: Get tag/version
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      # Setup .npmrc file to publish to GitHub Packages
-      - uses: actions/setup-node@v2
+
+      - name: Configure npm
+        uses: actions/setup-node@v2
         with:
-          registry-url: 'https://npm.pkg.github.com'
-      - run: npm install
-      - run: npm publish ${{ env.RELEASE_VERSION }} --registry 'https://npm.pkg.github.com'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm config set @jbuncle:registry https://npm.pkg.github.com
+
+      - run: npm version ${{ env.RELEASE_VERSION }}
+      - run: npm pack
+        run: echo "RELEASE=$(ls *.tgz | tail -n 1)" >> $GITHUB_ENV
+      - run: npm publish ${{ env.RELEASE }} --registry 'https://npm.pkg.github.com'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
