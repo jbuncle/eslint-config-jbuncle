@@ -20,7 +20,7 @@ jobs:
       - run: npm version ${{ env.RELEASE_VERSION }}
       
       # Publish to npmjs
-      - run: npm publish --tag ${{ env.RELEASE_VERSION }}
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
     
