@@ -18,8 +18,14 @@ jobs:
 
       - run: npm config set git-tag-version false
       - run: npm version ${{ env.RELEASE_VERSION }}
-  
-      - uses: actions/setup-node@v2
+      
+      # Publish to npmjs
+      - run: npm publish --tag ${{ env.RELEASE_VERSION }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
+    
+      # Publish to github packages
+      - uses: actions/setup-node@v2 
         with:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@jbuncle'
