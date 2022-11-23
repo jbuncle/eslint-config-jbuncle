@@ -18,15 +18,6 @@ jobs:
 
       - run: npm config set git-tag-version false
       - run: npm version ${{ env.RELEASE_VERSION }}
-      
-      # Publish to npmjs
-      - uses: actions/setup-node@v2
-        with:
-          registry-url: 'https://registry.npmjs.org'
-          scope: '@jbuncle'
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
     
       # Publish to github packages
       - uses: actions/setup-node@v2 
