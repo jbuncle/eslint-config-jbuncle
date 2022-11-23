@@ -25,6 +25,6 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@jbuncle'
 
-      - run: npm publish --tag ${{ env.RELEASE_VERSION }}
+      - run: npm publish ${{ env.RELEASE_VERSION }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
