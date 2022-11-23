@@ -17,7 +17,7 @@ jobs:
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
       - run: npm config set git-tag-version false
-      - run: npm version ${{ env.RELEASE_VERSION }}
+      - run: npm version ${{ github.ref }}
     
       # Publish to github packages
       - uses: actions/setup-node@v2 
