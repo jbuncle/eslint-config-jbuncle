@@ -5,7 +5,7 @@
         "node": true
     },
     "extends": [
-        "eslint:recommended", 
+        "eslint:recommended",
         "plugin:@typescript-eslint/all",
         "prettier",
         "prettier/@typescript-eslint",
@@ -27,17 +27,39 @@
     "rules": {
         "@typescript-eslint/require-await": "off",
         "no-console": 1,
-        "require-jsdoc": ["error", {
-            "require": {
-                "FunctionDeclaration": true,
-                "MethodDefinition": false,
-                "ClassDeclaration": true,
-                "ArrowFunctionExpression": false,
-                "FunctionExpression": false
+        "require-jsdoc": [
+            "error",
+            {
+                "require": {
+                    "FunctionDeclaration": true,
+                    "MethodDefinition": false,
+                    "ClassDeclaration": true,
+                    "ArrowFunctionExpression": false,
+                    "FunctionExpression": false
+                }
             }
-        }],
-        "@typescript-eslint/quotes": ["error", "backtick"],
-        "@typescript-eslint/space-before-function-paren": ["error", "never"],
+        ],
+        "@typescript-eslint/quotes": [
+            "error",
+            "backtick"
+        ],
+        "@typescript-eslint/space-before-function-paren": [
+            "error",
+            {
+                "anonymous": "never",
+                "named": "never",
+                "asyncArrow": "always"
+            }
+        ],
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "enum",
+                "format": [
+                    "UPPER_CASE"
+                ]
+            }
+        ],
         "@typescript-eslint/indent": 1,
         "@typescript-eslint/prefer-readonly": 1,
         "@typescript-eslint/promise-function-async": 1,
