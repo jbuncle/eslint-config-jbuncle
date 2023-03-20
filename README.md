@@ -16,24 +16,24 @@ bashCopy code
 
 2. In the `.eslintrc.json` file, extend the `@jbuncle/jbuncle` configuration:
 
-jsonCopy code
-
-`{
+```json
+{
   "extends": [
     "@jbuncle/jbuncle"
   ]
-}`
+}
+```
 
 1. In your `package.json` file, add the following scripts:
 
-jsonCopy code
-
-`{
+```json
+{
   "scripts": {
     "lint": "eslint -c .eslintrc.json --ext .ts ./src",
     "lint-fix": "eslint --fix -c .eslintrc.json --ext .ts ./src"
   }
-}`
+}
+```
 
 ## Usage
 
