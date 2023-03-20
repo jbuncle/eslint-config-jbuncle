@@ -1,0 +1,7 @@
+/node_modules
+/package-lock.json
+
+/.gitignore
+/.gitlab-ci.yml
+/.github
+/README.md
