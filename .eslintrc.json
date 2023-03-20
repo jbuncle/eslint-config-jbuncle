@@ -54,7 +54,7 @@
         "@typescript-eslint/naming-convention": [
             "error",
             {
-                "selector": "enum",
+                "selector": "enumMember",
                 "format": [
                     "UPPER_CASE"
                 ]
