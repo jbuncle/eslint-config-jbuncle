@@ -6,9 +6,10 @@ This package provides an ESLint configuration for personal projects by `jbuncle`
 
 To install this package, run the following command:
 
-bashCopy code
 
-`npm install @jbuncle/eslint-config-jbuncle --save-dev`
+```bash
+npm install @jbuncle/eslint-config-jbuncle --save-dev
+```
 
 ## Configuration
 
@@ -39,15 +40,15 @@ bashCopy code
 
 To run ESLint, use the `lint` command:
 
-bashCopy code
-
-`npm run lint`
+```bash
+npm run lint
+```
 
 To automatically fix ESLint errors, use the `lint-fix` command:
 
-bashCopy code
-
-`npm run lint-fix`
+```bash
+npm run lint-fix
+```
 
 ## Integration with CI/CD
 
